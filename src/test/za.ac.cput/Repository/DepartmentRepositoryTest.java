@@ -1,3 +1,8 @@
+/*  DepartmentRepositoryTest.java
+    Test for the DepartmentRepository
+    Author: Chante Lee Davids [220246688]
+    Date  : 8 April 2022
+*/
 package za.ac.cput.Repository;
 
 import org.junit.jupiter.api.MethodOrderer;

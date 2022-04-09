@@ -1,3 +1,9 @@
+/*  DoctorFactory.java
+    Factory for the Doctor
+    Author: Chante Lee Davids [220246688]
+    Date  : 6 April 2022
+*/
+
 package za.ac.cput.Factory;
 
 import za.ac.cput.Entity.Doctor;
@@ -13,8 +19,8 @@ public class DoctorFactory {
         if(Helper.isNullOrEmpty(doctorName) || Helper.isNullOrEmpty(departmentName) || Helper.isNullOrEmpty(specialty) || Helper.isNullOrEmpty(doctorPassword))
             return null;
 
-//        if(Helper.validatePassword(doctorPassword))
-//            return null;
+        if(Helper.passwordValidation(doctorPassword))
+            return null;
 
         return new Doctor.Builder().setDoctorId(doctorId)
                 .setDoctorName(doctorName)

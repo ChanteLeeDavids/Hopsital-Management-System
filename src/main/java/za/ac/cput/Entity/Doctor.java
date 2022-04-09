@@ -1,3 +1,9 @@
+/*  Doctor.java
+    Entity for the Doctor
+    Author: Chante Lee Davids [220246688]
+    Date  : 6 April 2022
+*/
+
 package za.ac.cput.Entity;
 
 public class Doctor {

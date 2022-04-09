@@ -1,3 +1,9 @@
+/*  DoctorRepositoryTest.java
+    Test for the DoctorRepository
+    Author: Chante Lee Davids [220246688]
+    Date  : 8 April 2022
+*/
+
 package za.ac.cput.Repository;
 
 import org.junit.jupiter.api.MethodOrderer;
@@ -11,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class DoctorRepositoryTest {
     private static DoctorRepository repository = DoctorRepository.getRepository();
-    private static Doctor doctor = DoctorFactory.createDoctor("Demi Greene","VeryCoolPassword_123","Nursing Department","Nurse Midwife");
+    private static Doctor doctor = DoctorFactory.createDoctor("Demi Greene","VeryCoolPassword_123","Nursing Department","Midwife Nurse");
 
     @Test
     void a_create(){
