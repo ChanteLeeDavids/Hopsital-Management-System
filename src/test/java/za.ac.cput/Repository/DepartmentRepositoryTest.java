@@ -3,43 +3,41 @@ package za.ac.cput.Repository;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import za.ac.cput.domain.Doctor;
-import za.ac.cput.factory.DoctorFactory;
+import za.ac.cput.Entity.Department;
+import za.ac.cput.Factory.DepartmentFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
-class DoctorRepositoryTest {
-    private static DoctorRepository repository = DoctorRepository.getRepository();
-    private static Doctor doctor = DoctorFactory.createDoctor("Demi Greene","VeryCoolPassword_123","Nursing Department","Nurse Midwife");
+class DepartmentRepositoryTest {
+    private static DepartmentRepository repository = DepartmentRepository.getRepository();
+    private static Department department = DepartmentFactory.createDepartment("Nursing Department", 145);
 
     @Test
     void a_create(){
-        Doctor created = repository.create((doctor));
-        assertEquals(doctor.getDoctorId(),created.getDoctorId());
+        Department created = repository.create((department));
+        assertEquals(department.getDepartmentId(),created.getDepartmentId());
         System.out.println("Create: "+ created);
     }
 
     @Test
     void b_read(){
-        Doctor read= repository.read(doctor.getDoctorId());
+        Department read = repository.read(department.getDepartmentId());
         assertNotNull(read);
         System.out.println("Read: "+ read);
     }
     @Test
     void c_update(){
-        Doctor updated = new Doctor.Builder().copy(doctor)
-                .setDoctorName("Demi Davids")
-                .setDoctorPassword("KitKat_42")
+        Department updated = new Department.Builder().copy(department)
                 .setDepartmentName("Nursing Department")
-                .setSpecialty("Pediatric Nurse")
+                .setDepartmentSize(145)
                 .build();
         assertNotNull(repository.update(updated));
         System.out.println("Updated: "+ updated);
     }
     @Test
     void e_delete(){
-        boolean success= repository.delete(doctor.getDoctorId());
+        boolean success = repository.delete(department.getDepartmentId());
         assertTrue(success);
         System.out.println("Delete: "+ success);
 
